@@ -18,15 +18,15 @@ class EmailRecord extends React.Component {
                 <input
                   type={"text"} value={this.props.emailValueTwo}
                   placeholder={"Confirm email"}
-                  onChange={this.props.handleEmailValueTwo}
+                  onChange={(event) => this.props.handleEmailValueTwo(event)}
                 />
               </div>
               <div style={{display: "flex", justifyContent: "space-between"}} className='buttonContainer'>
                 <button
-                    onClick={this.props.handleToggleBackToOne}
+                    onClick={(event) => this.props.handleToggleBackToOne(event)}
                 >Previous</button>
                 <button
-                    onClick={this.props.handleToggleToNextPage}
+                    onClick={(event) => this.props.handleToggleToNextPage(event)}
                 >Next</button>
               </div>
               <div>

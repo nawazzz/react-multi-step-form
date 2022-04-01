@@ -31,7 +31,8 @@ class App extends React.Component {
     let obj = {
       name: this.state.inputValueOne,
       surname: this.state.inputValueTwo,
-      email: this.state.emailValueOne
+      email: this.state.emailValueOne,
+      confirmEmail: this.state.emailValueTwo
     }
     this.setState({
       switchPage: true,
@@ -61,6 +62,14 @@ class App extends React.Component {
     })
   }
 
+  handleEmailValueOne = (event) => {
+    if (this.state.emailValueOne) {
+      this.setState({
+        
+      })
+    }
+  }
+
   handleToggleToNextPage = (event) => {
     console.log(event)
   }
@@ -73,7 +82,10 @@ class App extends React.Component {
           
           <EmailRecord 
             emailValueOne={this.state.emailValueOne} switchPage={this.state.switchPage} 
-            emailValueTwo={this.state.emailValueTwo}
+            emailValueTwo={this.state.emailValueTwo} handleToggleBackToOne={this.handleToggleBackToOne}
+            handleToggleToNextPage={this.handleToggleToNextPage}
+            handleEmailValueOne={this.handleEmailValueOne} 
+            handleEmailValueTwo={this.handleEmailValueTwo}
           />
         ) : (
             <div className='subMainContainer'>
